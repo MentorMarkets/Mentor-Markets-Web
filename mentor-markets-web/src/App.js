@@ -12,6 +12,7 @@ import Calendar from './components/Calendar/Calendar';
 import Messages from './components/Messages/Messages';
 import Meet from './components/Meet/Meet';
 import Jobs from './components/Jobs/Jobs';
+import Map from './components/Map/Map';
 
 function App() {
   return (
@@ -39,19 +40,23 @@ function App() {
               </li> */}
               <br />
               <li>
-                <Link to="/Calendar">Calendar</Link>
+                <Link to="/calendar">Call Calendar</Link>
               </li>
               <br />
               <li>
-                <Link to="/Messages">Messages</Link>
+                <Link to="/map">Map</Link>
               </li>
               <br />
               <li>
-                <Link to="/Jobs">Jobs</Link>
+                <Link to="/messages">Messages</Link>
               </li>
               <br />
               <li>
-                <Link to="/Meet">Meet</Link>
+                <Link to="/jobs">Jobs</Link>
+              </li>
+              <br />
+              <li>
+                <Link to="/meet">Meet</Link>
               </li>
               <br />
               <br />
@@ -85,6 +90,7 @@ function App() {
             <Route path="/messages" element={<Messages />} />
             <Route path="/jobs" element={<Jobs />} />
             <Route path="/meet" element={<Meet />} />
+            <Route path="/map" element={<Map />} />
             <Route path="/" element={<Home />} />
           </Routes>
         </div>

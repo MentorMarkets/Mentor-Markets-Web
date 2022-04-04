@@ -7,7 +7,7 @@ const Messages = () => (
     
     <h1>Messages</h1>
 
-    <p>Where mentees and menotrs can "follow up" before and after their meetings together.</p>
+    <p>Where mentees and mentors can "follow up" before and after their meetings together.</p>
 
   </div>
 );
