@@ -5,7 +5,10 @@ import './Calendar.css';
 const Calendar = () => (
   <div className="Calendar" data-testid="Calendar">
 
-    <h1>Calendar</h1>
+    <h1>Call Calendar</h1>
+
+    <p>Book a video, audio, and screenshare call with a mentor!</p>
+
 
     <p><i>
       Note: choosing from the dropdowns here should filter the available mentors in the calendar area._
