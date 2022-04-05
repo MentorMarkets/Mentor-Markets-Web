@@ -50,7 +50,11 @@ function App() {
               </li>
               <br />
               <li>
-                <Link to="/messages">1-On-1 Chat</Link>
+                <Link to="/messages">Messages</Link>
+              </li>
+              <br />
+              <li>
+                <Link to="/messages">Become A Mentor</Link>
               </li>
               <br />
               <li>
