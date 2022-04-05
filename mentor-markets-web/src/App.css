@@ -2,6 +2,19 @@
   text-align: center;
 }
 
+.links-row {
+  display: flex;
+  justify-content: space-around;
+}
+
+.header-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+}
+
 .App-logo {
   height: 5vmin;
   pointer-events: none;
@@ -36,3 +49,5 @@
     transform: rotate(360deg);
   }
 }
+
+

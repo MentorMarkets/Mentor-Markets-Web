@@ -18,11 +18,14 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Mentor Markets
-        </p>
-        {/* <Link to=''/> */}
+
+        <a href='/' className='header-row'>
+          <img src={logo} className="App-logo" alt="logo" />
+          <p>
+            Mentor Markets
+          </p>
+        </a>
+
       </header>
 
       <Router>
@@ -30,8 +33,7 @@ function App() {
           <nav>
 
             <br />
-            (Debug Panel)
-            <ul>
+            <ul className='links-row'>
               <li>
                 <Link to="/">Home</Link>
               </li>
@@ -48,7 +50,7 @@ function App() {
               </li>
               <br />
               <li>
-                <Link to="/messages">Messages</Link>
+                <Link to="/messages">1-On-1 Chat</Link>
               </li>
               <br />
               <li>
@@ -81,6 +83,7 @@ function App() {
               </li>
               */}
             </ul>
+            <hr />
           </nav>
 
           {/* A <Switch> looks through its children <Route>s and
