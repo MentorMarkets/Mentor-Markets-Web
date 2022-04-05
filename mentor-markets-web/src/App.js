@@ -13,6 +13,8 @@ import Messages from './components/Messages/Messages';
 import Meet from './components/Meet/Meet';
 import Jobs from './components/Jobs/Jobs';
 import Map from './components/Map/Map';
+import BecomeAMentor from './components/BecomeAMentor/BecomeAMentor';
+import Account from './components/Account/Account';
 
 function App() {
   return (
@@ -54,7 +56,7 @@ function App() {
               </li>
               <br />
               <li>
-                <Link to="/messages">Become A Mentor</Link>
+                <Link to="/become-a-mentor">Become A Mentor</Link>
               </li>
               <br />
               <li>
@@ -63,6 +65,10 @@ function App() {
               <br />
               <li>
                 <Link to="/meet">Meet</Link>
+              </li>
+              <br />
+              <li>
+                <Link to="/account">Account</Link>
               </li>
               <br />
               <br />
@@ -97,6 +103,8 @@ function App() {
             <Route path="/messages" element={<Messages />} />
             <Route path="/jobs" element={<Jobs />} />
             <Route path="/meet" element={<Meet />} />
+            <Route path="/account" element={<Account />} />
+            <Route path="/become-a-mentor" element={<BecomeAMentor />} />
             <Route path="/map" element={<Map />} />
             <Route path="/" element={<Home />} />
           </Routes>
