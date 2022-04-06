@@ -7,6 +7,18 @@
   justify-content: space-around;
 }
 
+.profile-row {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  justify-content: space-around;
+}
+
+.profile-img {
+  width: 10rem;
+  border-radius: 5rem;
+}
+
 .header-row {
   display: flex;
   flex-direction: row;

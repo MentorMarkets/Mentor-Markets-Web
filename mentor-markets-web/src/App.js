@@ -13,6 +13,9 @@ import Messages from './components/Messages/Messages';
 import Meet from './components/Meet/Meet';
 import Jobs from './components/Jobs/Jobs';
 import Map from './components/Map/Map';
+import LoginButton_Auth0 from './components/LoginButton_Auth0/LoginButton_Auth0';
+import LogoutButton_Auth0 from './components/LogoutButton_Auth0/LogoutButton_Auth0';
+import { useAuth0 } from '@auth0/auth0-react';
 
 function App() {
   return (
@@ -27,6 +30,9 @@ function App() {
         </a>
 
       </header>
+      <div>
+        {LoginLogoutSection()}
+      </div>
 
       <Router>
         <div>
@@ -63,6 +69,10 @@ function App() {
               <br />
               <li>
                 <Link to="/meet">Meet</Link>
+              </li>
+              <br />
+              <li>
+                <Link to="/meet">Account</Link>
               </li>
               <br />
               <br />
@@ -104,6 +114,36 @@ function App() {
       </Router>
     </div>
   );
+}
+
+function LoginLogoutSection() {
+
+  const { user, isAuthenticated, isLoading } = useAuth0();
+
+  console.table(user)
+
+  if (isLoading) {
+    return <div>Loading ...</div>;
+  }
+
+  if (isAuthenticated)
+    return (
+      <div>
+        <br />
+        <div className="profile-row">
+          <img className='profile-img' src={user.picture} alt={user.name} />
+          <div>
+            <h2>{user.name}</h2>
+            <p>{user.email}</p>
+            <p>{user.sub}</p>
+            <LogoutButton_Auth0></LogoutButton_Auth0>
+          </div>
+        </div>
+      </div>
+    )
+
+  return <LoginButton_Auth0></LoginButton_Auth0>
+
 }
 
 export default App;

@@ -68,3 +68,17 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+### Generating Components
+
+Generate a new componet named Foobar liek so:
+```
+npx generate-react-cli component Foobar
+```
+
+# Auth
+
+Uses Jim's g.
+
+App name: mentor-markets

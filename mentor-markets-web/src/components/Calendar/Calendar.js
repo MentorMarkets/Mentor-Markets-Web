@@ -106,46 +106,51 @@ const Calendar = () => {
         <br />
         <hr />
 
-        <h1>Mentors Available</h1>
+        {selectedSubcategory &&
+
+          <div>
+
+            <h1>Mentors Available</h1>
 
 
-        ${`< --  - - - - - - - - - - - - -- - - - - - -- - - - - -- - - - - - - - - - >`}
-        <br />
-        <br />
-        ${'$10/hour _______________________  $40/hour _______________________ $150/hour'}
+            ${`< --  - - - - - - - - - - - - -- - - - - - -- - - - - -- - - - - - - - - - >`}
+            <br />
+            <br />
+            ${'$10/hour _______________________  $40/hour _______________________ $150/hour'}
 
-        <br />
-        <br />
+            <br />
+            <br />
 
-        ^ Show a price spectrum of available mentors, also filtered by select inputs.
+            ^ Show a price spectrum of available mentors, also filtered by select inputs.
 
-        <br />
-        <br />
-        <br />
+            <br />
+            <br />
+            <br />
 
-        <div className='calendar-container'>
+            <div className='calendar-container'>
 
-          <h2>Book A Mentoring Session</h2>
+              <h2>Book A Mentoring Session</h2>
 
-          <br />
+              <br />
 
-          <p>
-            The time table below shows availablities of mentors that match what you're looking for!
-          </p>
-        </div>
+              <p>
+                The time table below shows availablities of mentors that match what you're looking for!
+              </p>
+            </div>
 
-        <br />
-        <div className='calendar-container'>
+            <br />
+            <div className='calendar-container'>
 
-          <Timeline
-            groups={groups}
-            items={items}
-            defaultTimeStart={moment().add(-12, 'hour')}
-            defaultTimeEnd={moment().add(12, 'hour')}
-          />
+              <Timeline
+                groups={groups}
+                items={items}
+                defaultTimeStart={moment().add(-12, 'hour')}
+                defaultTimeEnd={moment().add(12, 'hour')}
+              />
 
 
-        </div>
+            </div>
+          </div>}
 
       </div>
 
