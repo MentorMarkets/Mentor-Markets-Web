@@ -16,6 +16,8 @@ import Map from './components/Map/Map';
 import LoginButton_Auth0 from './components/LoginButton_Auth0/LoginButton_Auth0';
 import LogoutButton_Auth0 from './components/LogoutButton_Auth0/LogoutButton_Auth0';
 import { useAuth0 } from '@auth0/auth0-react';
+import BecomeAMentor from './components/BecomeAMentor/BecomeAMentor';
+import Account from './components/Account/Account';
 
 function App() {
   return (
@@ -60,7 +62,7 @@ function App() {
               </li>
               <br />
               <li>
-                <Link to="/messages">Become A Mentor</Link>
+                <Link to="/become-a-mentor">Become A Mentor</Link>
               </li>
               <br />
               <li>
@@ -72,7 +74,7 @@ function App() {
               </li>
               <br />
               <li>
-                <Link to="/meet">Account</Link>
+                <Link to="/account">Account</Link>
               </li>
               <br />
               <br />
@@ -107,6 +109,8 @@ function App() {
             <Route path="/messages" element={<Messages />} />
             <Route path="/jobs" element={<Jobs />} />
             <Route path="/meet" element={<Meet />} />
+            <Route path="/account" element={<Account />} />
+            <Route path="/become-a-mentor" element={<BecomeAMentor />} />
             <Route path="/map" element={<Map />} />
             <Route path="/" element={<Home />} />
           </Routes>
