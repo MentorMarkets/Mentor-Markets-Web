@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   BrowserRouter as Router,
   Route,
@@ -18,8 +18,24 @@ import LogoutButton_Auth0 from './components/LogoutButton_Auth0/LogoutButton_Aut
 import { useAuth0 } from '@auth0/auth0-react';
 import BecomeAMentor from './components/BecomeAMentor/BecomeAMentor';
 import Account from './components/Account/Account';
+import GetJobs, { foo, getJobs } from './components/GetJobs';
 
 function App() {
+
+  const { user, isAuthenticated, isLoading, getAccessTokenSilently } = useAuth0();
+  const [userMetadata, setUserMetadata] = useState(null);
+
+  const [jobsData, setJobsData] = useState()
+
+  // useEffect(() => {
+
+  //   if (user)
+  //     getJobs(user, isAuthenticated, getAccessTokenSilently).then(jobsData => {
+  //       setJobsData(jobsData);
+  //     });
+
+  // }, [user?.sub]);
+
   return (
     <div className="App">
       <header className="App-header">
@@ -33,7 +49,7 @@ function App() {
 
       </header>
       <div>
-        {LoginLogoutSection()}
+        {LoginLogoutSection(user, isAuthenticated, isLoading, userMetadata)}
       </div>
 
       <Router>
@@ -120,11 +136,9 @@ function App() {
   );
 }
 
-function LoginLogoutSection() {
+function LoginLogoutSection(user, isAuthenticated, isLoading, userMetadata) {
 
-  const { user, isAuthenticated, isLoading } = useAuth0();
-
-  console.table(user)
+  // console.table(user)
 
   if (isLoading) {
     return <div>Loading ...</div>;
@@ -140,6 +154,8 @@ function LoginLogoutSection() {
             <h2>{user.name}</h2>
             <p>{user.email}</p>
             <p>{user.sub}</p>
+            <h2>User metadata & token(s)</h2>
+
             <LogoutButton_Auth0></LogoutButton_Auth0>
           </div>
         </div>
