@@ -43,7 +43,7 @@ function App() {
         <a href='/' className='header-row'>
           <img src={logo} className="App-logo" alt="logo" />
           <p>
-            Mentor Markets
+            Pairing On Demand
           </p>
         </a>
 

@@ -65,7 +65,15 @@ const Calendar = () => {
     <h1>Call Calendar</h1>
 
     <p>Book a video, audio, and screenshare call with a mentor here!</p>
-    <p>Select a subject to get started!</p>
+
+
+    {!selectedSubject &&
+      <div>
+
+        <br />
+        <h2>Select a subject to get started!</h2>
+        ↓
+      </div>}
 
     <br />
 
@@ -76,18 +84,26 @@ const Calendar = () => {
       value={selectedSubject}
       onChange={e => setSelectedSubject(e.currentTarget.value)}
     >
+      <option value="" disabled selected>Select a mentoring subject</option>
       {subjects.map(subject => {
         return <option value={subject}>{subject}</option>
       })}
     </select>
 
     <br />
-    <br />
-    <br />
+
+    {selectedSubject && !selectedSubcategory &&
+      <div>
+
+        <br />
+        <h2>Now select a subcategory!</h2>
+        ↓
+      </div>}
 
     {
       selectedSubject && <div>
 
+        <br />
         <label>
           {`Mentoring subcategory  `}
         </label>
@@ -96,6 +112,7 @@ const Calendar = () => {
           value={selectedSubcategory}
           onChange={e => setSelectedSubcategory(e.currentTarget.value)}
         >
+          <option value="" disabled selected>Select a subcategory</option>
           {subcategories[selectedSubject].map(subcategory => {
             return <option value={subcategory}>{subcategory}</option>
           })}
