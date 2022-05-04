@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 import './Meet.css';
 
 
-
-
 const Meet = () => {
 
   let captureStream = null;
@@ -46,6 +44,8 @@ const Meet = () => {
 
     try {
       captureStream = await navigator.mediaDevices.getUserMedia({ audio: true, video: true });
+
+      videoElem.srcObject = captureStream
     } catch (err) {
       console.error("Error: " + err);
     }
@@ -69,7 +69,7 @@ const Meet = () => {
   }
 
   async function startCapture() {
-    logElem.innerHTML = "";
+    // logElem.innerHTML = "";
 
     try {
       videoElem.srcObject = await navigator.mediaDevices.getDisplayMedia(displayMediaOptions);

@@ -1,29 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
-import React, { useEffect, useState } from "react";
-import {
-  BrowserRouter as Router,
-  Route,
-  Link,
-  Routes
-} from "react-router-dom";
-import Home from './components/Home/Home';
-import Calendar from './components/Calendar/Calendar';
-import Messages from './components/Messages/Messages';
-import Meet from './components/Meet/Meet';
-import Jobs from './components/Jobs/Jobs';
-import Map from './components/Map/Map';
-import LoginButton_Auth0 from './components/LoginButton_Auth0/LoginButton_Auth0';
-import LogoutButton_Auth0 from './components/LogoutButton_Auth0/LogoutButton_Auth0';
-import { useAuth0 } from '@auth0/auth0-react';
-import BecomeAMentor from './components/BecomeAMentor/BecomeAMentor';
-import Account from './components/Account/Account';
-import GetJobs, { foo, getJobs } from './components/GetJobs';
+import logo from './logo.svg'
+import './App.css'
+import React, { useEffect, useState } from 'react'
+import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom'
+import Home from './components/Home/Home'
+import Calendar from './components/Calendar/Calendar'
+import Messages from './components/Messages/Messages'
+import Meet from './components/Meet/Meet'
+import Jobs from './components/Jobs/Jobs'
+import Map from './components/Map/Map'
+import LoginButton_Auth0 from './components/LoginButton_Auth0/LoginButton_Auth0'
+import LogoutButton_Auth0 from './components/LogoutButton_Auth0/LogoutButton_Auth0'
+import { useAuth0 } from '@auth0/auth0-react'
+import BecomeAMentor from './components/BecomeAMentor/BecomeAMentor'
+import Account from './components/Account/Account'
+import GetJobs, { foo, getJobs } from './components/GetJobs'
 
 function App() {
-
-  const { user, isAuthenticated, isLoading, getAccessTokenSilently } = useAuth0();
-  const [userMetadata, setUserMetadata] = useState(null);
+  const {
+    user,
+    isAuthenticated,
+    isLoading,
+    getAccessTokenSilently,
+  } = useAuth0()
+  const [userMetadata, setUserMetadata] = useState(null)
 
   const [jobsData, setJobsData] = useState()
 
@@ -39,14 +38,10 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-
-        <a href='/' className='header-row'>
+        <a href="/" className="header-row">
           <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Pairing On Demand
-          </p>
+          <p>Pairing On Demand</p>
         </a>
-
       </header>
       <div>
         {LoginLogoutSection(user, isAuthenticated, isLoading, userMetadata)}
@@ -55,9 +50,8 @@ function App() {
       <Router>
         <div>
           <nav>
-
             <br />
-            <ul className='links-row'>
+            <ul className="links-row">
               <li>
                 <Link to="/">Home</Link>
               </li>
@@ -133,15 +127,14 @@ function App() {
         </div>
       </Router>
     </div>
-  );
+  )
 }
 
 function LoginLogoutSection(user, isAuthenticated, isLoading, userMetadata) {
-
   // console.table(user)
 
   if (isLoading) {
-    return <div>Loading ...</div>;
+    return <div>Loading ...</div>
   }
 
   if (isAuthenticated)
@@ -149,21 +142,23 @@ function LoginLogoutSection(user, isAuthenticated, isLoading, userMetadata) {
       <div>
         <br />
         <div className="profile-row">
-          <img className='profile-img' src={user.picture} alt={user.name} />
+          <img className="profile-img" src={user.picture} alt={user.name} />
           <div>
             <h2>{user.name}</h2>
             <p>{user.email}</p>
             <p>{user.sub}</p>
             <h2>User metadata & token(s)</h2>
-
+            <br />
             <LogoutButton_Auth0></LogoutButton_Auth0>
           </div>
         </div>
       </div>
     )
 
-  return <LoginButton_Auth0></LoginButton_Auth0>
-
+  return (<div>
+      <br />
+      <LoginButton_Auth0></LoginButton_Auth0>
+    </div>)
 }
 
-export default App;
+export default App

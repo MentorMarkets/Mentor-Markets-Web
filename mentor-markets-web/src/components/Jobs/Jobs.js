@@ -31,7 +31,6 @@ const Jobs = () => {
 
     <h2>Manage Your Jobs</h2>
     
-
   </div>
 }
 
